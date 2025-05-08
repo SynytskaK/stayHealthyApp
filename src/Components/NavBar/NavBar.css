@@ -1,22 +1,21 @@
 /* General reset */
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-}
+} */
 
 /* Main navbar container */
-nav {
-    padding: 1.5rem 2rem;
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 20px 32px;
+    justify-content: space-between;
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    right: 0;
+    left: 0;
     background-color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -35,10 +34,10 @@ nav {
     display: flex;
     list-style: none;
     font-size: 1rem;
-    /* Set font size for links */
     font-weight: 500;
     align-items: center;
-    /* Align items vertically */
+    padding: 0;
+    gap: 24px;
 }
 
 /* Individual links */
@@ -48,22 +47,10 @@ nav {
     align-items: center;
     /* Vertically center content */
 }
-
-.nav__links .link a {
-    color: #0d213f;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-size: 1rem;
-    /* Ensure font size consistency with other links */
-    transition: color 0.3s ease;
-}
-
-/* Hover effect for links */
-.nav__links .link a:hover {
+.link:hover{
     color: #F2994A;
-    text-decoration: underline;
+    cursor: pointer;
 }
-
 /* Sign Up/Login button styling */
 .btn1 {
     background-color: #fff;
@@ -81,6 +68,8 @@ nav {
     background-color: #F2994A;
     color: #fff;
 }
+
+
 
 /* Mobile responsiveness */
 @media (max-width: 780px) {
