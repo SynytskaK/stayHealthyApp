@@ -37,11 +37,15 @@ const Navbar = () => {
                 </li>
 
                 <li className="link">
+                    <a href='signup'>
                         <button className="btn1">Sign Up</button>
+                    </a>
                 </li>
 
                 <li className="link">
+                    <a href='login'>
                         <button className="btn1">Login</button>
+                    </a>
                 </li>
             </ul>
         </div>
