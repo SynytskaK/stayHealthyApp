@@ -29,7 +29,8 @@ const Sign_Up = () => {
 
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="tel" name="phone" id="phone" required class="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+                            <input type="tel"  pattern="\d{10}"
+    maxlength="10" name="phone" id="phone" required class="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
                         </div>
 
                         <div class="form-group">

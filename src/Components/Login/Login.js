@@ -2,13 +2,13 @@ import './Login.css'
 
 const Login = () => {
     return(
-         <div className="container"> 
-        <div className="signup-grid"> 
+         <div className="login_wrapper"> 
+        <div className="login-wrapper"> 
             <div> 
                 <h1 className="signup-text">Login</h1>
             </div>
             <div className="signup-text1"> 
-                Are you a new member? <span><a href="../Login/Login.html">  Sign Up Here</a></span>
+                Are you a new member? <span><a href="../Login/Login.html" className='orangeText'>  Sign Up Here</a></span>
             </div>
             <div className="signup-form"> 
                 <form>
