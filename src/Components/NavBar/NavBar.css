@@ -69,7 +69,17 @@
     color: #fff;
 }
 
-
+.orangeText {
+    color: #F2994A;
+    font-weight: 600;
+    cursor: pointer;
+}
+.underline{
+    font-weight: 800;
+}
+.gap{
+    gap: 10px
+}
 
 /* Mobile responsiveness */
 @media (max-width: 780px) {
