@@ -74,7 +74,9 @@ const Navbar = () => {
                 </li>
 
                 <li className="link">
+                    <Link to='instant-consultation'>
                     Appointments
+                    </Link>
                 </li>
                 <li className="link">
                     Health Blog
