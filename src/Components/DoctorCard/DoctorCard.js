@@ -3,8 +3,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import './DoctorCard.css';
 import { v4 as uuidv4 } from 'uuid';
-import AppointmentFormIC from '../InstantConsultationBooking/AppointmentFormIC/AppointmentFormIC';
-
+import AppointmentForm from '../AppointmentForm/AppointmentForm';
 
 const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
   const [showModal, setShowModal] = useState(false);
@@ -94,7 +93,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
                   ))}
                 </>
               ) : (
-                <AppointmentFormIC doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
+                <AppointmentForm doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
               )}
             </div>
           )}
