@@ -50,51 +50,51 @@ const Sign_Up = () => {
     };
 
     return (
-        <div class="wrapper" >
-            <div class="signup-wrapper">
+        <div className="wrapper" >
+            <div className="signup-wrapper">
                 <div>
-                    <h1 class="signup-text">Sign Up</h1>
+                    <h1 className="signup-text">Sign Up</h1>
                 </div>
-                <div class="signup-text1">
-                    Already a member? <span><a class="orangeText" href="login"> Login</a></span>
+                <div className="signup-text1">
+                    Already a member? <span><a className="orangeText" href="login"> Login</a></span>
                 </div>
-                <div class="signup-form">
+                <div className="signup-form">
                     <form method="POST" onSubmit={register}>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="role">Role</label>
-                            <select id="role" class="form-control">
+                            <select id="role" className="form-control">
                                 <option value="">Select Role</option>
-                                <option value="dog">Dog</option>
-                                <option value="cat">Cat</option>
+                                <option value="dog">Doctor</option>
+                                <option value="cat">Patient</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="name">Name</label>
-                            <input value={name} onChange={(e) => setName(e.target.value)} type="text" name="name" id="name" required class="form-control" placeholder="Enter your name" aria-describedby="helpId" />
+                            <input value={name} onChange={(e) => setName(e.target.value)} type="text" name="name" id="name" required className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="phone">Phone</label>
                             <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" pattern="\d{10}"
-                                maxlength="10" name="phone" id="phone" required class="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+                                maxlength="10" name="phone" id="phone" required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" required class="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" required className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
                             {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
 
                         </div>
 
-                        <div class="form-group">
+                        <div classN="form-group">
                             <label htmlFor="password">Password</label>
-                            <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" required class="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" required classN="form-control" placeholder="Enter your password" aria-describedby="helpId" />
                         </div>
 
-                        <div class="btn-group">
-                            <button type="submit" class="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>
-                            <button type="reset" class="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
+                        <div classN="btn-group">
+                            <button type="submit" classN="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>
+                            <button type="reset" classN="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
                         </div>
                     </form>
                 </div>
