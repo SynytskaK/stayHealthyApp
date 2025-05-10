@@ -54,13 +54,17 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
        <Popup
           style={{ backgroundColor: '#FFFFFF' }}
           trigger={
-            <button className={`book-appointment-btn ${appointments.length > 0 ? 'cancel-appointment' : ''}`}>
+            <button className={`book-appointment-btn ${appointments.length > 0 ? 'cancel-appointment' : 'normal-state'}`}>
               {appointments.length > 0 ? (
+                <>
                 <div>Cancel Appointment</div>
+              </>
               ) : (
+                <>
                 <div>Book Appointment</div>
-              )}
               <div>No Booking Fee</div>
+</>
+              )}
             </button>
           }
           modal
@@ -88,7 +92,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
                     <div className="bookedInfo" key={appointment.id}>
                       <p>Name: {appointment.name}</p>
                       <p>Phone Number: {appointment.phoneNumber}</p>
-                      <button onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
+                      <button style={{backgroundColor: 'red', border: 'none'}} onClick={() => handleCancel(appointment.id)}>Cancel Appointment</button>
                     </div>
                   ))}
                 </>

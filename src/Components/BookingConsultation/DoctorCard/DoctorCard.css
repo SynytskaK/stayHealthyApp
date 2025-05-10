@@ -17,7 +17,9 @@
   .cancel-appointment {
     background-color: red;
   }
-  
+  .normal-state{
+background-color: '#F2994A'
+  }
   .doctor-card-details-container {
     padding: 20px;
   }
@@ -67,7 +69,6 @@
   }
   
   .book-appoinment-btn {
-    background-color: #3498db;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -131,20 +132,7 @@
   background-color: #0d8af5;
 }
 
-.cancel-appointment-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #f44336;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-.cancel-appointment-btn:hover {
-  background-color: #d63027;
-}
 .appointment-form {
   max-width: 400px;
   margin: 0 auto;
@@ -176,13 +164,14 @@ textarea {
 
 .book-appointment-btn {
   padding: 12px 20px;
-  background-color: #F2994A;
   color: #fff;
   border: 1px solid #F2994A;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   width: 100%;
+  text-align: center;
+  min-height: 74px;
 }
 
 .book-appointment-btn:hover {
@@ -194,4 +183,11 @@ textarea {
   background-color: green;
   cursor: pointer;
   /* color: rgb(249, 60, 60); */
+}
+.bookedInfo{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 100px;
 }

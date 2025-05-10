@@ -53,9 +53,9 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
         <div className="form-group">
                             <label htmlFor="time">Book Time Slot:</label>
                             <select id="time">
-                                <option value="">Select a time slot</option>
-                                <option value="8am">Doctor</option>
-                                <option value="9am">Patient</option>
+                                <option value="time">Select a time slot</option>
+                                <option value="8am">8am</option>
+                                <option value="9am">9am</option>
                             </select>
                         </div>
         <button type="submit">Book Now</button>
