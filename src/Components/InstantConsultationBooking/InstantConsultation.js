@@ -12,8 +12,6 @@ const InstantConsultation = () => {
     const [filteredDoctors, setFilteredDoctors] = useState([]);
     const [isSearched, setIsSearched] = useState(false);
 
-    console.log(filteredDoctors)
-
     const getDoctorsDetails = () => {
         fetch('https://api.npoint.io/9a5543d36f1460da2f63')
             .then(res => res.json())
