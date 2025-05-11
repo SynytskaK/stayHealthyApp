@@ -77,7 +77,7 @@ const Sign_Up = () => {
                         <div className="form-group">
                             <label htmlFor="phone">Phone</label>
                             <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" pattern="\d{10}"
-                                maxlength="10" name="phone" id="phone" required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+                                maxLength="10" name="phone" id="phone" required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
                         </div>
 
                         <div className="form-group">
@@ -87,14 +87,14 @@ const Sign_Up = () => {
 
                         </div>
 
-                        <div classN="form-group">
+                        <div className="form-group">
                             <label htmlFor="password">Password</label>
                             <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" required classN="form-control" placeholder="Enter your password" aria-describedby="helpId" />
                         </div>
 
-                        <div classN="btn-group">
-                            <button type="submit" classN="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>
-                            <button type="reset" classN="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
+                        <div className="btn-group">
+                            <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>
+                            <button type="reset" className="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
                         </div>
                     </form>
                 </div>

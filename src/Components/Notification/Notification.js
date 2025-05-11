@@ -32,7 +32,6 @@ const [time, setTime] = useState(null);
     if(doctorTime) {
         setTime(doctorTime)
     }
-    console.log('doctorName', doctorName)
     // Set isLoggedIn state to true and update username if storedUsername exists
     if (storedUsername) {
       setIsLoggedIn(true);
@@ -54,8 +53,6 @@ const [time, setTime] = useState(null);
   }, []); // Empty dependency array ensures useEffect runs only once after initial render
 
   // Return JSX elements to display Navbar, children components, and appointment details if user is logged in
-  console.log('isLoggedIn',isLoggedIn)
-  console.log('appointmentData',appointmentData)
 
   return (
     <div>

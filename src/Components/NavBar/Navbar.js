@@ -16,6 +16,10 @@ const Navbar = () => {
         sessionStorage.removeItem("name");
         sessionStorage.removeItem("email");
         sessionStorage.removeItem("phone");
+        sessionStorage.removeItem("doctorName");
+        sessionStorage.removeItem("doctorSpeciality");
+        sessionStorage.removeItem("date");
+        sessionStorage.removeItem("slot");
         // remove email phone
         localStorage.removeItem("doctorData");
         setIsLoggedIn(false);
@@ -82,7 +86,9 @@ const Navbar = () => {
                     Health Blog
                 </li>
                 <li className="link">
+                    <Link to='review'>
                     Reviews
+                    </Link>
                 </li>
 
                 {isLoggedIn ? (

@@ -13,6 +13,9 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     setShowModal(true);
   };
 
+//   console.log(appointments)
+  const doctorName = sessionStorage.getItem('doctorName');
+
   const handleCancel = (appointmentId) => {
     const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
     setAppointments(updatedAppointments);
@@ -49,13 +52,12 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
               </div> */}
       </div>
 
-
       <div className="doctor-card-options-container">
        <Popup
           style={{ backgroundColor: '#FFFFFF' }}
           trigger={
-            <button className={`book-appointment-btn ${appointments.length > 0 ? 'cancel-appointment' : 'normal-state'}`}>
-              {appointments.length > 0 ? (
+            <button className={`book-appointment-btn ${doctorName === name ? 'cancel-appointment' : 'normal-state'}`}>
+              {doctorName === name ? (
                 <>
                 <div>Cancel Appointment</div>
               </>
@@ -85,7 +87,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
                 </div>
               </div>
 
-              {appointments.length > 0 ? (
+              {doctorName === name ? (
                 <>
                   <h3 style={{ textAlign: 'center' }}>Appointment Booked!</h3>
                   {appointments.map((appointment) => (
