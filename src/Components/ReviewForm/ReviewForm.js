@@ -1,12 +1,11 @@
 import './ReviewForm.css'
 import Popup from 'reactjs-popup';
-import React, { useEffect, useState } from 'react';
-import ModalReview from './ModalReview'
+import React, { useState } from 'react';
+import ModalReview from './ModalReview';
 
 const ReviewForm = () => {
     const appointments = JSON.parse(sessionStorage.getItem("appointment"));
-    const [showModal, setShowModal] = useState(false);
-    const [review, setReview] = useState(null)
+    const [reviews, setReviews] = useState({});
 
     return (
         <div className="wrapper-review">
@@ -28,38 +27,47 @@ const ReviewForm = () => {
                         <li>
                             <Popup
                                 trigger={
-                                    <button disabled={!!review} className={review && "disabled-button"}>Give Review</button>
+                                    <button
+                                        disabled={!!reviews[index]}
+                                        className={reviews[index] && "disabled-button"}
+                                    >
+                                        Give Review
+                                    </button>
                                 }
-
                                 modal
                             >
                                 {(close) => (
-                                    <ModalReview onCloseModal={close} setReview={setReview} />
+                                    <ModalReview
+                                        onCloseModal={close}
+                                        setReview={(reviewData) =>
+                                            setReviews((prev) => ({
+                                                ...prev,
+                                                [index]: reviewData
+                                            }))
+                                        }
+                                    />
                                 )}
                             </Popup>
                         </li>
                         <li className='li-review'>
-                            {review ?
+                            {reviews[index] && (
                                 <div className='rewiew-block'>
-                                    <p>{review.name}</p>
-                                    <p>{review.review}</p>
+                                    <p>{reviews[index].name}</p>
+                                    <p>{reviews[index].review}</p>
                                     <div className='stars'>
-                                    {[...Array(review.rating)].map((_, i) => (
-          <span key={i} className='filled-star'>
-            ★
-          </span>
-        ))}
-        </div>
+                                        {[...Array(reviews[index].rating)].map((_, i) => (
+                                            <span key={i} className='filled-star'>★</span>
+                                        ))}
+                                    </div>
                                 </div>
-                                : ''
-                            }
+                            )}
                         </li>
                     </ul>
                 ))}
                 <div className='divider'></div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ReviewForm;

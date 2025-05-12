@@ -6,12 +6,16 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [selectedSlot, setSelectedSlot] = useState(null);
     const [date, setDate] = useState(null);
 
-    const appointmentData = [{
+    const appointmentData = {
         doctorName,
         doctorSpeciality,
         date,
         slot: selectedSlot
-      }];
+      };
+
+      const existingAppointments = JSON.parse(sessionStorage.getItem("appointment")) || [];
+
+      const updatedAppointments = [...existingAppointments, appointmentData];
 
     const handleSlotSelection = (slot) => {
         setSelectedSlot(slot);
@@ -23,7 +27,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
         setName('');
         setPhoneNumber('');
 
-        sessionStorage.setItem("appointment", JSON.stringify(appointmentData));
+        sessionStorage.setItem("appointment", JSON.stringify(updatedAppointments));
     };
 
     return (

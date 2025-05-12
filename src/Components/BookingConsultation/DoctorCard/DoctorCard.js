@@ -33,7 +33,6 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
         const updatedAppointments = [...appointments, newAppointment];
         setAppointments(updatedAppointments);
         setShowModal(false);
-        window.reload()
     };
 
     return (
