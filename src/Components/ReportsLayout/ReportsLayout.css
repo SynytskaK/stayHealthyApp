@@ -1,0 +1,94 @@
+.wrapper-review {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+}
+
+.category-review {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.subcategory {
+    display: flex;
+       align-items: center;
+    justify-content: space-between;
+    background-color: #E4E4E4;
+    padding: 10px;
+     font-weight: 600;
+    font-size: 20px;
+}
+
+.review {
+       display: flex;
+       align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+.divider{
+    height: 1px;
+    background-color: #E4E4E4;
+}
+
+.modal-wrapper{
+    display: flex;
+    background-color: #E4E4E4;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.modal-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.h2-modal{
+    text-align: center;
+}
+
+.star-rating {
+    font-size: 1.5rem;
+    color: gray;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .filled-star {
+    color: gold;
+  }
+  
+  .empty-star:hover,
+  .filled-star:hover {
+    color: orange;
+  }
+  
+  .rewiew-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .li-review{
+    min-width: 100px;
+  }
+
+  .stars{
+    display: flex;
+  }
+
+  .disabled-button{
+    background-color: #E4E4E4;
+    border: 1px solid #E4E4E4;
+  }
+
+  .disabled-button:hover{
+    background-color: #E4E4E4;
+  }

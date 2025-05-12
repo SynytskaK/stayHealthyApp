@@ -7,6 +7,9 @@ const ProfileCard = ({setShowDropdown}) => {
             <Link to='/profile'>
                 <button className='text' onClick={()=>setShowDropdown(false)}>Your Profile</button>
             </Link>
+            <Link to='/reports'>
+                <button className='text' onClick={()=>setShowDropdown(false)}>Your Reports</button>
+            </Link>
         </div>
     )
 }
