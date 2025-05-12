@@ -89,7 +89,7 @@ const Sign_Up = () => {
 
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
-                            <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" required classN="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" required className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
                         </div>
 
                         <div className="btn-group">

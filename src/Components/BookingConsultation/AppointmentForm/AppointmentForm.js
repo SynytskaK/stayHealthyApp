@@ -6,18 +6,16 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [selectedSlot, setSelectedSlot] = useState(null);
     const [date, setDate] = useState(null);
 
+    const appointmentData = {
+        doctorName,
+        doctorSpeciality,
+        date,
+        slot: selectedSlot
+      };
+
     const handleSlotSelection = (slot) => {
         setSelectedSlot(slot);
     };
-
-    // useEffect(() => {
-    //     if (doctorName && doctorSpeciality) {
-    //         sessionStorage.setItem("doctorName", doctorName);
-    //         sessionStorage.setItem("doctorSpeciality", doctorSpeciality);
-    //         sessionStorage.setItem("date", date);
-    //         sessionStorage.setItem("slot", selectedSlot);
-    //     }
-    // }, [])
     
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -25,10 +23,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
         setName('');
         setPhoneNumber('');
 
-         sessionStorage.setItem("doctorName", doctorName);
-            sessionStorage.setItem("doctorSpeciality", doctorSpeciality);
-            sessionStorage.setItem("date", date);
-            sessionStorage.setItem("slot", selectedSlot);
+        sessionStorage.setItem("appointment", JSON.stringify(appointmentData));
     };
 
     return (
