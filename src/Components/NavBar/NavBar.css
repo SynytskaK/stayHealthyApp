@@ -59,6 +59,13 @@
 }
 .underline{
     font-weight: 800;
+    background: none;
+    border: none;
+    color: black;
+}
+.underline:hover{
+    background: none;
+    color: #F2994A
 }
 .gap{
     gap: 10px

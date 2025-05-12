@@ -1,13 +1,14 @@
 import './NavBar.css';
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProfileCard from '../ProfileCard/ProfileCard';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     // const [email, setEmail] = useState("");
-    // const [showDropdown, setShowDropdown] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
 
     const handleClick = () => setClick(!click);
 
@@ -31,9 +32,10 @@ const Navbar = () => {
         window.location.reload();
     }
 
-    // const handleDropdown = () => {
-    //     setShowDropdown(!showDropdown);
-    // }
+    const handleDropdown = () => {
+        setShowDropdown(!showDropdown);
+    }
+
     useEffect(() => {
         const name = sessionStorage.getItem("name");
 
@@ -89,7 +91,8 @@ const Navbar = () => {
                 {isLoggedIn ? (
                     <>
                         <li className="link gap">
-                            <div className='underline'>Welcome, <span className='orangeText'>{username}</span></div>
+                            <button className='underline' onClick={handleDropdown}>Welcome, <span className='orangeText'>{username}</span></button>
+                            {showDropdown && <ProfileCard setShowDropdown={setShowDropdown}/>}
                             <button className="btn1" onClick={handleLogout}>
                                 Logout
                             </button>
