@@ -92,3 +92,15 @@
   .disabled-button:hover{
     background-color: #E4E4E4;
   }
+
+  .anchor {
+    background-color: #F2994A;
+    border: 2px solid #F2994A;
+    padding: 8px 20px;
+    min-width: 120px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+        transition: background-color 0.3s ease, color 0.3s ease;
+}
