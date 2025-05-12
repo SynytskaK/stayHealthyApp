@@ -26,10 +26,10 @@ const Notification = ({ children }) => {
 
         if (storedData) {
             setDoctorData({
-                doctorName: storedData.doctorName,
-                doctorSpeciality: storedData.doctorSpeciality,
-                date: storedData.date,
-                slot: storedData.slot
+                doctorName: storedData[0].doctorName,
+                doctorSpeciality: storedData[0].doctorSpeciality,
+                date: storedData[0].date,
+                slot: storedData[0].slot
             })
         }
 
