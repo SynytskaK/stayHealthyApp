@@ -10,7 +10,11 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     const [appointments, setAppointments] = useState([]);
     const storedData = JSON.parse(sessionStorage.getItem("appointment"));
     
-    const isStoredData = storedData && storedData.doctorName === name;
+    const isStoredData = storedData && storedData[0].doctorName === name;
+    // const isStoredData = storedData && storedData.map(i => (
+    //     i.doctorName === name
+    // ));
+
 
     const handleBooking = () => {
         setShowModal(true);
@@ -29,6 +33,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
         const updatedAppointments = [...appointments, newAppointment];
         setAppointments(updatedAppointments);
         setShowModal(false);
+        window.reload()
     };
 
     return (

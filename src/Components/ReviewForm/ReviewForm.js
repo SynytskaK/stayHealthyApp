@@ -1,6 +1,8 @@
 import './ReviewForm.css'
 
 const ReviewForm = () => {
+    const appointments = JSON.parse(sessionStorage.getItem("appointment"));
+
     return (
         <div className="wrapper-review">
             <h1>Reviews</h1>
@@ -13,16 +15,19 @@ const ReviewForm = () => {
                     <li>Review Given</li>
                 </ul>
 
-                <ul className='review'>
-                    <li>1</li>
-                    <li>name</li>
-                    <li>specializ</li>
-                    <li>
-                        <button>Give Review</button>
-                    </li>
-                    <li>review</li>
-                </ul>
-<div className='divider'></div>
+                {appointments && appointments.map((item, index) => (
+                    <ul className='review' key={index}>
+                        <li>{index + 1}</li>
+                        <li>{item.doctorName}</li>
+                        <li>{item.doctorSpeciality}</li>
+                        <li>
+                            <button>Give Review</button>
+                        </li>
+                        <li>Pending</li> 
+                    </ul>
+                ))}
+
+                <div className='divider'></div>
             </div>
         </div>
     )
