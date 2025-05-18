@@ -11,16 +11,16 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
         doctorSpeciality,
         date,
         slot: selectedSlot
-      };
+    };
 
-      const existingAppointments = JSON.parse(sessionStorage.getItem("appointment")) || [];
+    const existingAppointments = JSON.parse(sessionStorage.getItem("appointment")) || [];
 
-      const updatedAppointments = [...existingAppointments, appointmentData];
+    const updatedAppointments = [...existingAppointments, appointmentData];
 
     const handleSlotSelection = (slot) => {
         setSelectedSlot(slot);
     };
-    
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
         onSubmit({ name, phoneNumber });
@@ -46,6 +46,9 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
                 <label htmlFor="phoneNumber">Phone Number:</label>
                 <input
                     type="tel"
+                    pattern="\d{10}"
+
+                    maxLength="10"
                     id="phoneNumber"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}

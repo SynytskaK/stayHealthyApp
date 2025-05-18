@@ -9,20 +9,24 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     const [showModal, setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
     const storedData = JSON.parse(sessionStorage.getItem("appointment"));
-    
+
     const isStoredData = storedData && storedData[0].doctorName === name;
-    // const isStoredData = storedData && storedData.map(i => (
-    //     i.doctorName === name
-    // ));
 
-
-    const handleBooking = () => {
-        setShowModal(true);
-    };
+    useEffect(() => {
+        if (storedData) {
+            setAppointments(storedData)
+        }
+    }, [])
 
     const handleCancel = (appointmentId) => {
         const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
         setAppointments(updatedAppointments);
+
+        if (isStoredData) {
+            sessionStorage.removeItem("appointment");
+        }
+
+        setShowModal(false);
     };
 
     const handleFormSubmit = (appointmentData) => {
