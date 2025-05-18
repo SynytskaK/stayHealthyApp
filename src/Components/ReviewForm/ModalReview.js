@@ -1,11 +1,11 @@
 // Following code has been commented with appropriate comments for your reference.
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './ReviewForm.css'
 
 // Function component for giving reviews
 function ModalReview({onCloseModal, setReview}) {
   // State variables using useState hook
-  const [showForm, setShowForm] = useState(false);
+
   const [submittedMessage, setSubmittedMessage] = useState('');
   const [showWarning, setShowWarning] = useState(false);
   const [formData, setFormData] = useState({
@@ -13,11 +13,6 @@ function ModalReview({onCloseModal, setReview}) {
     review: '',
     rating: 0
   });
-
-  // Function to handle button click event
-  const handleButtonClick = () => {
-    setShowForm(true);
-  };
 
   // Function to handle form input changes
   const handleChange = (e) => {
@@ -78,12 +73,12 @@ function ModalReview({onCloseModal, setReview}) {
           <button type="submit">Submit</button>
         </form>
       {/* Display the submitted message if available */}
-      {/* {submittedMessage && (
+      {submittedMessage && (
         <div>
           <h3>Submitted Message:</h3>
           <p>{submittedMessage}</p>
         </div>
-      )} */}
+      )}
     </div>
   );
 }
